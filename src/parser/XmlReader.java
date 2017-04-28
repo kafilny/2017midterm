@@ -20,7 +20,7 @@ import java.util.List;
 
 public class XmlReader {
 	
-	public List<Student> parseData(String tagName,String path) throws ParserConfigurationException, SAXException, IOException{
+	public List<Student> parseData(String tag, String path) throws ParserConfigurationException, SAXException, IOException{
 		
 	DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
 	DocumentBuilder builder = factory.newDocumentBuilder();
@@ -32,7 +32,7 @@ public class XmlReader {
 		Node node = nodeList.item(i);
 		if(node instanceof Element){
 			Student student = new Student();
-			student.id = node.getAttributes().getNamedItem(tagName).getNodeValue();
+			student.id = node.getAttributes().getNamedItem(tag).getNodeValue();
 			NodeList childNodes = node.getChildNodes();
 			for(int j=0;j<childNodes.getLength();j++){
 				Node cNode = childNodes.item(j);
@@ -62,9 +62,21 @@ public class XmlReader {
 	//This convert method need to be implemented.
 	public String convertIntToChar(String score){
 		String grade = "";
-		
-		
-		return grade;	
+		if(Integer.parseInt(score) >= 90){
+			grade = "A";
+		}else if(Integer.parseInt(score) >= 80){
+			grade = "B";
+		}else if(Integer.parseInt(score) >= 70){
+			grade = "C";
+		}else if(Integer.parseInt(score) >= 60){
+			grade = "D";
+		}else{
+			grade = "F";
+		}
+		return grade;
+	
 	}
+
+	
 	
 }

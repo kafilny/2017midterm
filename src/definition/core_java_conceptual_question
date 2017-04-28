@@ -1,0 +1,317 @@
+What jdk contains or composed of and define each components? Ans:The JDK is a superset of the JRE, and contains everything that is in the JRE, plus tools such as the compilers and debuggers necessary for developing applets and applications. THE RUNTIME INTERPRETER: The Java runtime interpreter (java) is a stand-alone version of the Java interpreter built into the HotJava browser. The runtime interpreter provides the support to run Java executable programs in compiled, bytecode format.  THE COMPILER: The Java compiler (javac) is used to compile Java source code files into executable Java bytecode classes. In Java, source code files have the extension .java. The Java compiler takes files with this extension and generates executable class files with the .class extension. The compiler creates one class file for each class defined in a source file. This means that many times a single Java source code file will compile into multiple executable class files. When this happens, it means that the source file contains multiple class definitions.  THE APPLET VIEWER: The applet viewer is a tool that serves as a minimal test bed for final release Java applets. You can use the applet viewer to test your programs instead of having to wait for HotJava to support the final release of Java. Currently, the applet viewer is the most solid application to test final release Java programs, because the HotJava browser still only supports alpha release applets.  What is IDE? Ans: IDE is an integrated development environment for programming in Java; many also provide functionality for other languages,     IDEs typically provide a code editor, a compiler or interpreter and a debugger that the developer accesses through a unified graphical user interface (GUI). Java IDEs also include language-specific elements such as Ant and Maven build tools and TestNG and JUnit testing. What are the IDEs available in the market to support java? Ans:NetBeans,Eclipse,IntelliJ IDEA Community Edition,Android Studio,Enide Studio 2014,BlueJ,jEdit,jGRASP,JSource,JDeveloper,DrJava. Explain the entire java life cycle. Ans:Java life cycle:     When you write a source code using either notepad or eclipse IDE, it needs to be converted into byte code using javac compiler. Byte code is in the form of .class .  The class file then loads into the JVM using java loader . the JVM then send all the information to the operating system which shows you the output     The compiler:     When you compile a java file it is written with the extension .java. for example A.java     The job of the compiler is to convert the ‘A.java’ into byte code (machine language) which will appear as ‘A.class’     The next step is to load the A.class into JVM (Java virtual machine)           JVM component:     JVM has the following components:     Class loader (java): the class loader is also called java which loads the class file into the JVM     Bytecode verifier:     The byte code verifier verifies the byte codes that is loaded.     Execution engine (JIT code generator): In the next step the JIT(just in time ) code generator converts the byte code into binary machine language which is understood by the operating system.         what is class? Ans:Class - A class is a blueprint or a template from which individual objects are created.            What is object? Ans:Object - An object is exactly like real life objects that have two features - its state & behavior.          What is the entry point of an application? Ans:When you launch the JVM, you specify a class to run, and it is the main() of this class where your program starts.      By init(), I assume you mean the JApplet method. When an applet is launched in the browser, the init() method of the specified applet is executed as the first order of business.      By run(), I assume you mean the method of Runnable. This is the method invoked when a new thread is started.      main: program start     init: applet start     run: thread start     If Eclipse is running your run() method even though you have no main(), then it is doing something peculiar and non-standard, but not infeasible. Perhaps you should post a sample class that you've been running this way. Why main is static? Ans:sometimes you have an instance that hasn't been initialized, and you have to check for it in every method that could be called.      There are just too many edge cases and ambiguities for it to make sense for the JVM to have to instantiate a class before the entry point is called. That's why main is static. What is the difference between an Interface and Abstract class? Ans:Abstract class:     1) Abstract class can have abstract and non-abstract methods.     2) Abstract class doesn't support multiple inheritance.     3) Abstract class can have final, non-final, static and non-static variables.     4) Abstract class can provide the implementation of interface.     5) The abstract keyword is used to declare abstract class.     6) Example:     public abstract class Shape{     public abstract void draw();     }  Interface: Interface can have only abstract methods. Since Java 8, it can have default and static methods also. Interface supports multiple inheritance. Interface has only static and final variables. Interface can't provide the implementation of abstract class. The interface keyword is used to declare interface. Example: public interface Drawable{ void draw(); }  Can you make an Object from an Interface and Abstract class ? if not how do you use it ? Ans:No.Abstract class has not implemented method so, we cant create the object" "The word 'Abstract' instruct the compiler to not create an object of the class constructor is processed to initialize the new object using the following procedure: .... all you can do is, you can create an Anonymous Class. what is Access Specifier? Java provides a number of access modifiers to set access levels for classes, variables, methods, and constructors. The four access levels are −  Visible to the package, the default. No modifiers are needed. Visible to the class only (private). Visible to the world (public). Visible to the package and all subclasses (protected). What is OOP ? Define each feature of java OOP. Ans:Object Oriented Programming is a paradigm that provides many concepts such as inheritance, data binding, polymorphism etc.Object-oriented programming (OOP) is a programming language model organized around objects rather than "actions" and data rather than logic. Historically, a program has been viewed as a logical procedure that takes input data, processes it, and produces output data. Encapsulation: Encapsulation means putting together all the variables (instance variables) and the methods into a single unit called Class. It also means hiding data and methods within an Object. Encapsulation provides the security that keeps data and methods safe from inadvertent changes. Programmers sometimes refer to encapsulation as using a “black box,” or a device that you can use without regard to the internal mechanisms. A programmer can access and use the methods and data contained in the black box but cannot change them. Below example shows Mobile class with properties, which can be set once while creating object using constructor arguments. Properties can be accessed using getXXX() methods which are having public access modifiers. Inheritance: An important feature of object-oriented programs is inheritance—the ability to create classes that share the attributes and methods of existing classes, but with more specific features. Inheritance is mainly used for code reusability. So you are making use of already written the classes and further extending on that. That why we discussed the code reusability the concept. In general one line definition, we can tell that deriving a new class from existing class, it’s called as Inheritance. You can look into the following example for inheritance concept. Here we have Mobile class extended by other specific class like Android and Blackberry. Polymorphism: In Core, Java Polymorphism is one of easy concept to understand. Polymorphism definition is that Poly means many and morphos means forms. It describes the feature of languages that allows the same word or symbol to be interpreted correctly in different situations based on the context. There are two types of Polymorphism available in Java. For example, in English, the verb “run” means different things if you use it with “a footrace,” a “business,” or “a computer.” You understand the meaning of “run” based on the other words used with it. Object-oriented programs are written so that the methods having the same name works differently in different context. Java provides two ways to implement polymorphism. What is API? Name list of API that you have used so far. Ans:An application programming interface (API), in the context of Java, is a collection of prewritten packages, classes, and interfaces with their respective methods, fields and constructors. Similar to a user interface, which facilitates interaction between humans and computers, an API serves as a software program interface facilitating interaction.      In Java, most basic programming tasks are performed by the API’s classes and packages, which are helpful in minimizing the number of lines written within pieces of code.      Java Development Kit (JDK) is comprised of three basic components, as follows:      1.Java compiler     2.Java Virtual Machine (JVM)     3.Java Application Programming Interface (API)     List of API:Name:                 Java Advanced Imaging                 Association for the standardization of embedded platforms                 Java Data Objects                 Android API                 JavaHelp                 Java Media Framework                 Java Naming and Directory Interface                 Java Persistence API                 Java Speech API                 Java 3D                 Java OpenGL                 Java USB for Windows  Does java support multiple inheritance? Ans:Java does not support multiple inheritance. What is method overloading and when it happens? Ans:Method Overloading is a feature that allows a class to have two or more methods having same name, if their argument lists are different. Overloading happens at compile-time. What is method overriding and when it happens? Ans:Declaring a method in subclass which is already present in parent class is known as method overriding. Method Overriding happens at run time. Explain exceptions in java and how to handle it. Ans: Exception is an abnormal condition.     In java, exception is an event that disrupts the normal flow of the program. It is an object which is thrown at runtime.     Exception Handling is a mechanism to handle runtime errors such as ClassNotFound, IO, SQL, Remote etc.   What is static keyword in java? How it has been used in variables and methods ? Ans:The static keyword in java is used for memory management mainly. We can apply java static keyword with variables, methods, blocks and nested class. The static keyword belongs to the class than instance of the class.      The static can be:      variable (also known as class variable)     method (also known as class method)     block     nested class     Used in Java Static Method:     It is a method which belongs to the class and not to the object(instance)     A static method can access only static data. It can not access non-static data (instance variables)     A static method can call only other static methods and can not call a non-static method from it.     A static method can be accessed directly by the class name and doesn’t need any object     Syntax : <class-name>.<method-name>     A static method cannot refer to "this" or "super" keywords in anyway      Used in Java Static Variable:     It is a variable which belongs to the class and not to object(instance)     Static variables are initialized only once , at the start of the execution . These variables will be initialized first, before the initialization of any instance variables     A single copy to be shared by all instances of the class     A static variable can be accessed directly by the class name and doesn’t need any object     Syntax : <class-name>.<variable-name> What is final and how it has been used variables and methods? Final is a keyword or reserved word in java and can be applied to member variables, methods, class and local variables in Java. Once you make a reference final you are not allowed to change that reference and compiler will verify this and raise compilation error if you try to re-initialized final Final Variable: Any variable either member variable or local variable (declared inside method or block) modified by final keyword is called final variable. Final variables are often declare with static keyword in java and treated as constant. Here is an example of final variable in Java  public static final String LOAN = "loan"; LOAN = new String("loan") //invalid compilation error  Final method:Final keyword in java can also be applied to methods. A java method with final keyword is called final method and it can not be overridden in sub-class. You should make a method final in java if you think it’s complete and its behavior should remain constant in sub-classes. Final methods are faster                    What is final, finally and finalize? Ans: Final:Final is a keyword or reserved word in java and can be applied to member variables, methods, class and local variables in Java. Once you make a reference final you are not allowed to change that reference and compiler will verify this and raise compilation error if you try to re-initialized final Finally:finally is used in a try/catch statement to execute code "always"          lock.lock();         try {           //do stuff         } catch (SomeException se) {           //handle se         } finally {           lock.unlock(); //always executed, even if Exception or Error or se         }          Finalize:finalize is called when an object is garbage collected. You rarely need to override it. An example:                   protected void finalize() {                    //free resources (e.g. unallocate memory)                    super.finalize();                  } What is a constructor ? Ans:Constructor - Constructor is a special type of method except it has to have the same name as the class and has no return type. It is used to create and initialize a new object.
+    What is "this" keyword in java ?, Ans:In java, this is a reference variable that refers to the current object. this can be used to refer current class instance variable. this can be used to invoke current class method (implicitly)  this() can be used to invoke current class constructor.  this can be passed as an argument in the method call.  this can be passed as argument in the constructor call.  this can be used to return the current class instance from the method. What is "super" keyword in java? Ans:The super keyword in java is a reference variable which is used to refer immediate parent class object.     Whenever you create the instance of subclass, an instance of parent class is created implicitly which is referred by super reference variable.     super can be used to refer immediate parent class instance variable.     super can be used to invoke immediate parent class method.     super() can be used to invoke immediate parent class constructor. What is JVM stand for ? Ans: A Java virtual machine (JVM), an implementation of the Java Virtual Machine Specification, interprets compiled Java binary code (called bytecode) for a computer's processor (or "hardware platform") so that it can perform a Java program's instructions. Java was designed to allow application programs to be built that could be run on any platform without having to be rewritten or recompiled by the programmer for each separate platform. A Java virtual machine makes this possible because it is aware of the specific instruction lengths and other particularities of the platform.  What version of java are you using? Ans:Java Version 1.8.0_25 from Oracle Corporation     or     Java Version 1.7.0_67 from Oracle Corporation     or     Java Version 1.6.0_45 from Sun Microsystems Inc.  or     Java Version 1.6.0_33 from Apple Inc. What is JAR stand for ? Ans:A JAR (Java ARchive) is a package file format typically used to aggregate many Java class files and associated metadata and resources (text, images, etc.) into one file for distribution.     JAR files are archive files with which include a Java-specific manifest file. They are built on the ZIP format and typically have a .jar file extension. What is compile time and run time? Ans: Compile time: compile time refers to either the operations performed by a compiler (the "compile-time operations"), programming language requirements that must be met by source code for it to be successfully compiled (the "compile-time requirements"), or properties of the program that can be reasoned about during compilation. Compile time refers to the time duration during which the statements written in any programming language are checked for errors. Run time: run time, runtime or execution time is the time during which a program is running (executing), in contrast to other program lifecycle phases such as compile time, link time and load time.  A run-time error is detected after or during the execution (running state) of a program, whereas a compile-time error is detected by the compiler before the program is ever executed. Type checking, register allocation, code generation, and code optimization are typically done at compile time, but may be done at run time depending on the particular language and compiler.  What is heap? Ans: The Java virtual machine has a heap that is shared among all Java virtual machine threads. The heap is the runtime data area from which memory for all class instances and arrays is allocated. The heap is created on virtual machine start-up. Heap storage for objects is reclaimed by an automatic storage management system (known as a garbage collector); objects are never explicitly deallocated. The heap may be of a fixed size or may be expanded as required by the computation and may be contracted if a larger heap becomes unnecessary. The memory for the heap does not need to be contiguous. A Java virtual machine implementation may provide the programmer or the user control over the initial size of the heap, as well as, if the heap can be dynamically expanded or contracted, control over the maximum and minimum heap size. How java manage it's memory? Ans: Memory management is all about allocation of objects. One part of the memory management system finds a free spot for the new object, while another part garbage collects old objects to create more free space for new objects. The more objects a Java application allocates, the more resources will be used for memory management. A correctly tuned memory management system minimizes the overhead inflicted by garbage collection and makes object allocation fast. You can read more about how memory management in the Oracle JRockit JVM works in Understanding Memory Management. This section covers the most important options available for tuning the memory management system in the JVM. The following topics are covered:  Optimizing Memory Allocation Performance Selecting and Tuning a Garbage Collector Tuning the Compaction of Memory Optimizing Memory Allocation Performance What is the difference between String, StringBuffer and StringBuilder? Ans:Difference between String, StringBuffer and StringBuilder:                    String                    StringBuffer         StringBuilder ---------------------------------------------------------------------------------- Storage Area | Constant String Pool           Heap                       Heap Modifiable   |  No (immutable)            Yes( mutable )          Yes( mutable ) Thread Safe  |           Yes                   Yes                        No  Performance |         Fast                 Very slow                    Fast   String is immutable whereas StringBuffer and StringBuider are mutable classes.  StringBuffer is thread safe and synchronized whereas StringBuilder is not, thats why StringBuilder is more faster than StringBuffer.  String concat + operator internally uses StringBuffer or StringBuilder class.  For String manipulations in non-multi threaded environment, we should use StringBuilder else use StringBuffer class.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

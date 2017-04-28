@@ -99,7 +99,8 @@ public class ConnectDB {
         try {
             connectToMySql();
             for(int n=0; n<ArrayData.length; n++){
-                ps = connect.prepareStatement("INSERT INTO "+tableName+" ( "+columnName+" ) VALUES(?)");
+               ps = connect.prepareStatement("INSERT INTO "+tableName+" ( "+columnName+" ) VALUES(?)");
+               // ps = connect.prepareStatement("INSERT INTO storedata(columnName) values()");
                 ps.setInt(1,ArrayData[n]);
                 ps.executeUpdate();
             }

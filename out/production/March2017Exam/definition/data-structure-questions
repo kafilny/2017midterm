@@ -1,31 +1,96 @@
 Please answer the below Data Structure Questions:
+ why do we need data structure? Ans: Any system in information technology is somehow manipulating some sort of data so in its own roots of any system is actually working with data (on some sort of abstraction).  And if you try to work with raw data without any meanings it will be like you started programming and developing some system from a 19th century, so data need to be organized and structured in some pretty way ... and it's a next best thing it happen in a IT .. people start thinking in a way that data has meaning something to some user of a system (one of ways you can eventually structure your data).  So basically beside some of plain simple data types (structures) like int, floats, bool's, char's ant other primitive types we came to programming and organizing data within classes and objects :) We also started to structure complex types of data into some structured 'patterns' so we now have even more complex data with design patterns like abstract factories, builders, prototypes etc ...   List out the areas in which data structures are applied extensively? Ans:System, Database Management System, Statistical analysis package, Numerical Analysis, Graphics, Artificial Intelligence, Simulation  what is an Array? Ans: Java provides a data structure, the array, which stores a fixed-size sequential collection of elements of the same type. An array is used to store a collection of data, but it is often more useful to think of an array as a collection of variables of the same type. Instead of declaring individual variables, such as number0, number1, ..., and number99, you declare one array variable such as numbers and use numbers[0], numbers[1], and ..., numbers[99] to represent individual variables.  what is the difference between the Array and ArrayList? Ans: Difference between Array and ArrayList :  1. Resizable :   Array is static in size that is fixed length data structure, One can not change the length after creating the Array object. ArrayList is dynamic in size . Each ArrayList object  has instance variable capacity which indicates the size of the ArrayList. As elements are added to an ArrayList its capacity grows automatically.  2. Performance : Performance of Array and ArrayList depends on the operation you are performing :  resize() opertation : Automatic resize of ArrayList will slow down the performance as it will use temporary array to copy elements from the old array to new array. ArrayList is internally backed by Array during resizing  as it calls the native implemented method System.arrayCopy(src,srcPos,dest,destPos,length) . add() or get() operation : adding an element or retrieving an element from the array or arraylist object has almost same  performance , as for ArrayList object these operations  run in constant time.  3. Primitives :  ArrayList can not contains primitive data types (like int , float , double) it can only contains Object while Array can contain both primitive data types as well as objects. One get a misconception that we can store primitives(int,float,double) in ArrayList , but it is not true Suppose we have ArrayList object ,  ArrayList  arraylistobject = new ArrayList(); arraylistobject.add(23);  // try to add 23 (primitive)  JVM through Autoboxing(converting primitives to equivalent objects internally) ensures that only objects are added to the arraylist object. thus , above step internally works like this :  arraylistobject.add( new Integer(23)); // Converted int primitive to Integer object and added to arraylistobject  4. Iterating the values : We can use iterator  to iterate through ArrayList . The iterators returned by the ArrayList class's iterator and listiterator method are fail-fast.  We can use for loop or for each loop to iterate through array .  5. Type-Safety :  In Java , one can ensure Type Safety through Generics. while Array is a homogeneous data structure , thus it will contain objects of specific class or primitives of specific  data type. In array if one try to store the different data type other than the specified while creating the array object , ArrayStoreException is thrown.  for example :  String temp[] =  new String[2];  // creates a string array of size 2 temp[0] = new Integer(12); // throws ArrayStoreException, trying to add Integer object in String[]  6. Length :  Length of the ArrayList is provided by the size() method while Each array object has the length variable which returns the length of the array.  for example :  Integer arrayobject[] = new Integer[3]; arraylength= arrayobject.length   ;  //uses arrayobject length variable    ArrayList  arraylistobject = new ArrayList(); arraylistobject.add(12); arraylistobject.size();   //uses arraylistobject size method   7. Adding elements : We can insert elements into the arraylist object using the add() method while  in array we insert elements using the assignment operator. for example :  Integer addarrayobject[] = new Integer[3]; addarrayobject[0]= new Integer(8)   ;  //new object is added to the array object  8. Multi-dimensional :  Array can be multi dimensional , while ArrayList is always single dimensional.  example of multidimensional array:  Integer addarrayobject[][] = new Integer[3][2]; addarrayobject[0][0]= new Integer(8)   what is LinkedList? Ans: Java LinkedList class uses doubly linked list to store the elements. It provides a linked-list data structure. It inherits the AbstractList class and implements List and Deque interfaces. The important points about Java LinkedList are: Java LinkedList class can contain duplicate elements. Java LinkedList class maintains insertion order. Java LinkedList class is non synchronized. In Java LinkedList class, manipulation is fast because no shifting needs to be occurred. Java LinkedList class can be used as list, stack or queue. what is queue? Ans:Java Queue interface orders the element in FIFO(First In First Out) manner. In FIFO, first element is removed first and last element is removed at last. A Queue is a collection for holding elements prior to processing. Besides basic Collection operations, queues provide additional insertion, removal, and inspection operations. The Queue interface follows.     public interface Queue<E> extends Collection<E> {         E element();         boolean offer(E e);         E peek();         E poll();         E remove();     }     Each Queue method exists in two forms: (1) one throws an exception if the operation fails, and (2) the other returns a special value if the operation fails (either null or false, depending on the operation). what is stack? Ans:Stack is a subclass of Vector that implements a standard last-in, first-out stack.     Stack only defines the default constructor, which creates an empty stack. Stack includes all the methods defined by Vector, and adds several of its own. what is FIFO and LIFO? Ans: FIFO: In computer programming, FIFO (first-in, first-out) is an approach to handling program work requests from queues or stacks so that the oldest request is handled next. LIFO: LIFO (last-in, first-out) is an approach in which the most recent request is handled next and the oldest request doesn't get handled until it is the only remaining request on the queue (or in the stack). Although LIFO seems "unfair," it may be more efficient. A stack that is handled using LIFO is sometimes referred to as a push-down or push-down pop-up stack or list. what is the order of complexity? Ans:Generally, an algorithm has an asymptotic computational complexity. Assuming the input is of size N, we can say that the algorithm will finish at O(N), O(N^2), O(N^3), O(N*log(N)) etc. This means that it is a certain mathematical expression of the size of the input, and the algorithm finishes between two factors of it.      Generally, the smaller the order of complexity of the program's underlying algorithm, the faster it will run and the better it will scale as the input gets larger. Thus, we should often seek more efficient algorithms in order to reduce the order of complexity. what is the best case to search an element from an array? Ans:The term best-case performance is used in computer science to describe an algorithm's behavior under optimal conditions. For example, the best case for a simple linear search on a list occurs when the desired element is the first element of the list. what is the worst case to search an element from an array? Ans:If the array is unsorted then you cannot do better than O(n) because in the worst case you have to look at all the elements to decide whether an item exists in the array or not.      However with some preprocessing you can bring down the time complexity for answering multiple queries.     1. Balanced BST - O(nlogn) to make, O(logn) to search.     2. Hashing - O(n) to make, O(1) to answer (standard hashing assumptions apply) .  what is tree in data structure? Ans:Tree represents the nodes connected by edges. We will discuss binary tree or binary search tree specifically. Binary Tree is a special datastructure used for data storage purposes. A binary tree has a special condition that each node can have a maximum of two children. A binary tree has the benefits of both an ordered array and a linked list as search is as quick as in a sorted array and insertion or deletion operation are as fast as in linked list.   what is graph in data structure? Ans:A graph is a pictorial representation of a set of objects where some pairs of objects are connected by links. The interconnected objects are represented by points termed as vertices, and the links that connect the vertices are called edges.   what is the difference between the HashTable and HashMap? Ans:difference between the HashTable and HashMap HashMap: 1) HashMap is non synchronized. It is not-thread safe and can't be shared between many threads without proper synchronization code. 2) HashMap allows one null key and multiple null values. 3) HashMap is a new class introduced in JDK 1.2. 4) HashMap is fast. 5) We can make the HashMap as synchronized by calling this code Map m = Collections.synchronizedMap(hashMap); 6) HashMap is traversed by Iterator. 7) Iterator in HashMap is fail-fast. 8) HashMap inherits AbstractMap class.  Hashtable: 1.Hashtable is synchronized. It is thread-safe and can be shared with many threads. 2.Hashtable doesn't allow any null key or value. 3.Hashtable is a legacy class. 4.Hashtable is slow. 5.Hashtable is internally synchronized and can't be unsynchronized. 6.Hashtable is traversed by Enumerator and Iterator. 7.Enumerator in Hashtable is not fail-fast. 8.Hashtable inherits Dictionary class.    What are the major data structures used in the following areas : RDBMS, Network data model and Hierarchical data model. Ans: RDBMS " Array (i.e. Array of structures) Network data model " Graph Hierarchical data model " Trees  How HashMap works in java? Ans: Hashmap works is that is it works based on the hashing principle but it is not as simple as it sounds. Hashing is the mechanism of assigning the unique code to a variable or attribute using some algorithm to enable easy retrieval. A true hashing mechanism should always return the same hashCode() when it is applied to the same object.  Ans:a hashmap works is that is it works based on the hashing principle but it is not as simple as it sounds. Hashing is the mechanism of assigning the unique code to a variable or attribute using some algorithm to enable easy retrieval. A true hashing mechanism should always return the same hashCode() when it is applied to the same object.      Then comes the question how does hashing help in storing and retrieving the value in HashMap. Many answers the value will be stored in the bucket and retrieved using the key if you think that is how it works then you are absolutely wrong.  To prove let’s take a look at the hashmap class.           /**          * The table, resized as necessary. Length MUST always be a power of two.          */          transient Entry[] table; What is ArrayIndexOutOfBoundsException in java? When it occurs? Ans: An ArrayIndexOutOfBoundsException is thrown when an out-of-range index is detected by an array object. An out-of-range index occurs when the index is less than zero or greater than or equal to the size of the array. public class java.lang.ArrayIndexOutOfBoundsException              extends java.lang.IndexOutOfBoundsException {   // Constructors   public ArrayIndexOutOfBoundsException();   public ArrayIndexOutOfBoundsException(int index);   public ArrayIndexOutOfBoundsException(String s); } ArrayIndexOutOfBoundsException occurs when you try to access an element in an array which does not exists. In your case you are trying to access the first element but the array is empty that's the reason you are getting an ArrayIndexOutOfBoundsException. Before accessing an array element by index make sure the size of that array is at least index+1. If the index is n the size should be n+1 if not you will get the exception.  What are the different ways of copying an array into another array? Ans: Changing one array will not change the other. Naturally, if an array entry is an object, the entry for that object in both arrays will point to the same object; this isn't a "deep" copy.  If the destination array exists and you want to append the contents of the source array to it, you can use push:  destinationArray.push.apply(destinationArray, sourceArray); That works by calling push on the destination array using the apply feature of JavaScript functions, which lets you specify the arguments for the function call as an array. push will push as many elements as it has arguments, so it ends up copying the elements from the source array to the destination array. destinationArray.push(...sourceArray); What is difference between an array and a linked list? Ans: The difference between array and linked lists are:  - Arrays are linear data structures. Linked lists are linear and non-linear data structures. - Linked lists are linear for accessing, and non-linear for storing in memory - Array has homogenous values. And each element is independent of each other positions. Each node in the linked list is connected with its previous node which is a pointer to the node. - Array elements can be modified easily by identifying the index value. It is a complex process for modifying the node in a linked list. - Array elements can not be added, deleted once it is declared. The nodes in the linked list can be added and deleted from the list. What is DFS and BFS? Ans: DFS:Depth first search     Depth first search is another way of traversing graphs, which is closely related to preorder traversal of a tree. Recall that preorder traversal simply visits each node before its children. It is most easy to program as a recursive routine:         preorder(node v)         {         visit(v);         for each child w of v             preorder(w);         }     To turn this into a graph traversal algorithm, we basically replace "child" by "neighbor". But to prevent infinite loops, we only want to visit each vertex once. Just like in BFS we can use marks to keep track of the vertices that have already been visited, and not visit them again. Also, just like in BFS, we can use this search to build a spanning tree with certain useful properties.         dfs(vertex v)         {         visit(v);         for each neighbor w of v             if w is unvisited             {             dfs(w);             add edge vw to tree T             }         }          BFS:         Breadth First Search          This can be throught of as being like Dijkstra's algorithm for shortest paths, but with every edge having the same length. However it is a lot simpler and doesn't need any data structures. We just keep a tree (the breadth first search tree), a list of nodes to be added to the tree, and markings (Boolean variables) on the vertices to tell whether they are in the tree or list.         breadth first search:              unmark all vertices             choose some starting vertex x             mark x             list L = x             tree T = x             while L nonempty             choose some vertex v from front of list             visit v             for each unmarked neighbor w                 mark w                 add it to end of list                 add edge vw to T  What is Recursion? Ans:In computer programming, a recursion (noun, pronounced ree-KUHR-zhion) is programming that is recursive (adjective), and recursive has two related meanings:     1) A recursive procedure or routine is one that has the ability to call itself. This usually means that it has the capability to save the condition it was in or the particular process it is serving when it calls itself (otherwise, any variable values that have been developed in executing the code are overlaid by the next iteration or go-through). Typically, this is done by saving values in registers or data area stacks before calling itself or at the beginning of the sequence where it has just been reentered.      2) A recursive expression is a function, algorithm, or sequence of instructions (typically, an IF, THEN, ELSE sequence) that loops back to the beginning of itself until it detects that some condition has been satisfied.  What is Big-(O)-notation? Ans:Big O notation is used in Computer Science to describe the performance or complexity of an algorithm. Big O specifically describes the worst-case scenario, and can be used to describe the execution time required or the space used (e.g. in memory or on disk) by an algorithm.  Outlined different kind of sorting algorithm with time complexity? Ans: Bucket Sort: Suppose we need to sort an array of positive integers {3,11,2,9,1,5}. A bucket sort works as follows: create an array of size 11. Then, go through the input array and place integer 3 into a second array at index 3, integer 11 at index 11 and so on. We will end up with a sorted list in the second array. The first problem is solved by using linked lists, attached to each array index. All duplicates for that bucket will be stored in the list. Another possible solution is to have a counter. As an example let us sort 3, 2, 4, 2, 3, 5. We start with an array of 5 counters set to zero.   0  1       2   3   4   5  0  0   0  0  0  0 Moving through the array we increment counters:  0  1       2   3   4   5  0  0  2  2  1  1 Next,we simply read off the number of each occurrence: 2 2 3 3 4 5.  Bubble Sort: The algorithm works by comparing each item in the list with the item next to it, and swapping them if required. In other words, the largest element has bubbled to the top of the array. The algorithm repeats this process until it makes a pass all the way through the list without swapping any items. Here is one step of the algorithm. The largest element - 7 - is bubbled to the top: 7, 5, 2, 4, 3, 9 5, 7, 2, 4, 3, 9 5, 2, 7, 4, 3, 9 5, 2, 4, 7, 3, 9 5, 2, 4, 3, 7, 9 5, 2, 4, 3, 7, 9 The worst-case runtime complexity is O(n2). Selection Sort: The algorithm works by selecting the smallest unsorted item and then swapping it with the item in the next position to be filled. Example. 29, 64, 73, 34, 20, 20, 64, 73, 34, 29, 20, 29, 73, 34, 64 20, 29, 34, 73, 64 20, 29, 34, 64, 73 The worst-case runtime complexity is O(n2). Insertion Sort: To sort unordered list of elements, we remove its entries one at a time and then insert each of them into a sorted part 29, 20, 73, 34, 64 29, 20, 73, 34, 64 20, 29, 73, 34, 64 20, 29, 73, 34, 64 20, 29, 34, 73, 64 20, 29, 34, 64, 73 The worst-case runtimecomplexity is O(n2). Mergesort: Merge-sort is based on the divide-and-conquer paradigm. It involves the following three steps: Divide the array into two (or more) subarrays Sort each subarray (Conquer) Merge them into one (in a smart way!) Suppose T(n) is the number of comparisons needed to sort an array of n elements by the MergeSort algorithm. By splitting an array in two parts we reduced a problem to sorting two parts but smaller sizes, namely n/2. Each part can be sort in T(n/2). Finally, on the last step we perform n-1 comparisons to merge these two parts in one. All together, we have the following equation T(n) = 2*T(n/2) + n - 1  Draw a table with time complexity in which it will summarize all the data structure feature's advantages and disadvantages.   a)In terms of Accessing element.   b)In terms of Inserting element.   c)In terms of Searching element.   d)In terms of Removing element.   Ans:   In terms of Inserting element:   In a normal Queue Data Structure, we can insert elements until queue becomes full. But once if queue becomes full, we can not insert the next element until all the elements are deleted from the queue. For example consider the queue below...            25 30 51 60 85 45 88 90 75 95            Front                      rear   After inserting all the elements into the queue.                    60 85 45 88 90 75 95                    front             rear     Now consider the following situation after deleting three elements from the queue.    In terms of Accessing element:   To implement a circular queue data structure using array, we first perform the following steps before we implement actual operations.    Step 1: Include all the header files which are used in the program and define a constant 'SIZE' with specific value.   Step 2: Declare all user defined functions used in circular queue implementation.   Step 3: Create a one dimensional array with above defined SIZE (int cQueue[SIZE])   Step 4: Define two integer variables 'front' and 'rear' and initialize both with '-1'. (int front = -1, rear = -1)   Step 5: Implement main method by displaying menu of operations list and make suitable function calls to perform operation selected by the user on circular queue.    In terms of Searching element:   Step 1: Check whether queue is EMPTY. (front == -1)   Step 2: If it is EMPTY, then display "Queue is EMPTY!!!" and terminate the function.   Step 3: If it is NOT EMPTY, then define an integer variable 'i' and set 'i = front'.   Step 4: Check whether 'front <= rear', if it is TRUE, then display 'queue[i]' value and increment 'i' value by one (i++). Repeat the same until 'i <= rear' becomes FALSE.   Step 5: If 'front <= rear' is FALSE, then display 'queue[i]' value and increment 'i' value by one (i++). Repeat the same until'i <= SIZE - 1' becomes FALSE.   Step 6: Set i to 0.   Step 7: Again display 'cQueue[i]' value and increment i value by one (i++). Repeat the same until 'i <= rear' becomes FALSE.  In terms of Removing element: In a circular queue, deQueue() is a function used to delete an element from the circular queue. In a circular queue, the element is always deleted from front position. The deQueue() function doesn't take any value as parameter. We can use the following steps to delete an element from the circular queue...  Step 1: Check whether queue is EMPTY. (front == -1 && rear == -1) Step 2: If it is EMPTY, then display "Queue is EMPTY!!! Deletion is not possible!!!" and terminate the function. Step 3: If it is NOT EMPTY, then display queue[front] as deleted element and increment the front value by one (front ++). Then check whether front == SIZE, if it is TRUE, then set front = 0. Then check whether both front - 1 and rear are equal (front -1 == rear), if it TRUE, then set both front and rear to '-1' (front = rear = -1). 
 
-why do we need data structure?
-List out the areas in which data structures are applied extensively?
-what is an Array?
-what is the difference between the Array and ArrayList?
-what is LinkedList?
-what is queue?
-what is stack?
-what is FIFO and LIFO?
-what is the order of complexity?
-what is the best case to search an element from an array?
-what is the worst case to search an element from an array?
-what is tree in data structure?
-what is graph in data structure?
-what is the difference between the HashTable and HashMap?
-What are the major data structures used in the following areas : RDBMS, Network data model and Hierarchical data model.
-How HashMap works in java?
-What is ArrayIndexOutOfBoundsException in java? When it occurs?
-What are the different ways of copying an array into another array?
-What is difference between an array and a linked list?
-What is DFS and BFS?
-What is Recursion?
-What is Big-(O)-notation?
-Outlined different kind of sorting algorithm with time complexity?
 
-Draw a table with time complexity in which it will summarize all the data structure feature's advantages and disadvantages.
-  a)In terms of Accessing element.
-  b)In terms of Inserting element.
-  c)In terms of Searching element.
-  d)In terms of Removing element.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
